@@ -1,0 +1,7 @@
+/home/Prababamaba/projects/USACO/build/CMakeFiles/install/strip.dir
+/home/Prababamaba/projects/USACO/build/CMakeFiles/install/local.dir
+/home/Prababamaba/projects/USACO/build/CMakeFiles/edit_cache.dir
+/home/Prababamaba/projects/USACO/build/CMakeFiles/usaco.dir
+/home/Prababamaba/projects/USACO/build/CMakeFiles/rebuild_cache.dir
+/home/Prababamaba/projects/USACO/build/CMakeFiles/list_install_components.dir
+/home/Prababamaba/projects/USACO/build/CMakeFiles/install.dir
