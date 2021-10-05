@@ -1,10 +1,10 @@
 # USACO Solutions
 
   This is currently a new project without comments. It also exhibits some... questionable naming.
-  However, I will try to make modification to make this easier to work with.
+  However, I will try to make modifications to make this easier to work with.
   
-## Navigation Instructions
-  
+## Organization Description
+
   1) Find the years of the USACO season you are looking for (e.g. "2018-2019")
   2) Find the number corresponding to which contest number of the year it corresponds to (e.g. January would be "2nd" since it's the second contest of the year).
      It's done this way because the contests show up in chronological order when alphebetically sorted.
