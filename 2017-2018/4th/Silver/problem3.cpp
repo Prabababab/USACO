@@ -11,13 +11,13 @@ struct graph_node{
 	
 	int id;
 	int area;
-	set<graph_node*> adj_nodes;
+	unordered_set <graph_node*> adj_nodes;
 	
 };
 vector<vector<graph_node*>> large_node;
 map<int, unordered_set<graph_node*>> cow_land;
 
-int bfs(int i, int j){
+int bfs(int& i, int& j){
 	
 	graph_node* g = new graph_node;
 	g->id = grid[i][j];
@@ -37,21 +37,33 @@ int bfs(int i, int j){
 		if(i + 1 < n  && vis[i+1][j] == false && grid[i+1][j] == id){
 			vis[i+1][j] = true;
 			q.push({i+1, j});
+		}else if(i + 1 < n && large_node[i+1][j] != nullptr && grid[i+1][j] != id){
+			g->adj_nodes.insert(large_node[i+1][j]);
+			large_node[i+1][j]->adj_nodes.insert(g);
 		}
 		
 		if(j + 1 < n && vis[i][j+1] == false && grid[i][j+1] == id){
 			vis[i][j+1] = true;
 			q.push({i, j+1});
+		}else if(j + 1 < n && large_node[i][j+1] != nullptr && grid[i][j+1] != id){
+			g->adj_nodes.insert(large_node[i][j+1]);
+			large_node[i][j+1]->adj_nodes.insert(g);
 		}
 		
 		if(i - 1 >= 0 && vis[i-1][j] == false && grid[i-1][j] == id){
 			vis[i-1][j] = true;
 			q.push({i-1, j});
+		}else if(i - 1 >= 0 && large_node[i-1][j] != nullptr && grid[i-1][j] != id){
+			g->adj_nodes.insert(large_node[i-1][j]);
+			large_node[i-1][j]->adj_nodes.insert(g);
 		}
 		
 		if(j - 1 >= 0 && vis[i][j-1] == false && grid[i][j-1] == id){
 			vis[i][j-1] = true;
 			q.push({i, j-1});
+		}else if(j - 1 >= 0 && large_node[i][j-1] != nullptr && grid[i][j-1] != id){
+			g->adj_nodes.insert(large_node[i][j-1]);
+			large_node[i][j-1]->adj_nodes.insert(g);
 		}
 		
 		large_node[i][j] = g;
@@ -64,28 +76,6 @@ int bfs(int i, int j){
 	cow_land[id].insert(g);
 	
 	return area;
-	
-}
-
-void form_adj(){
-	
-	for(int i = 0; i < n; ++i){
-		for(int j = 0; j < n; ++j){
-			
-			if(i + 1 < n && large_node[i][j] != large_node[i+1][j])
-				large_node[i][j]->adj_nodes.insert(large_node[i+1][j]);
-			
-			if(j + 1 < n && large_node[i][j] != large_node[i][j+1])
-				large_node[i][j]->adj_nodes.insert(large_node[i][j+1]);
-			
-			if(i - 1 >= 0 && large_node[i][j] != large_node[i-1][j])
-				large_node[i][j]->adj_nodes.insert(large_node[i-1][j]);
-			
-			if(j - 1 >= 0 && large_node[i][j] != large_node[i][j-1])
-				large_node[i][j]->adj_nodes.insert(large_node[i][j-1]);
-			
-		}
-	}
 	
 }
 
@@ -130,15 +120,16 @@ int max_val_graph(int a, int b){
 	
 }
 
+
 int main(){
 	
-	freopen("multimoo.in", "r", stdin);
-	freopen("multimoo.out", "w", stdout);
+// 	freopen("multimoo.in", "r", stdin);
+// 	freopen("multimoo.out", "w", stdout);
 	
 	cin >> n;
 	
 	grid.resize(n, vector<int>(n));
-	large_node.resize(n, vector<graph_node*>(n));
+	large_node.resize(n, vector<graph_node*>(n, nullptr));
 	for(int i = 0; i < n; ++i)
 		for(int j = 0; j < n; ++j)
 			cin >> grid[i][j];
@@ -157,8 +148,6 @@ int main(){
 	cout << max_area << "\n";
 	
 	//Part 2
-	
-	form_adj();
 	
 	int max_area_comb = 0;
 	

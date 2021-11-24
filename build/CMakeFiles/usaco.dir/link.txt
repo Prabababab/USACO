@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.o  -o usaco 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.o  -o usaco 

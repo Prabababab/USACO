@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/Prababamaba/projects/USACO/2018-2019/2nd/Silver/problem3.cpp" "/home/Prababamaba/projects/USACO/build/CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.o"
+  "/home/Prababamaba/projects/USACO/2015-2016/1st/Silver/problem3.cpp" "/home/Prababamaba/projects/USACO/build/CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

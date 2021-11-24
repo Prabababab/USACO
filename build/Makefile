@@ -186,32 +186,32 @@ usaco/fast:
 	$(MAKE) -f CMakeFiles/usaco.dir/build.make CMakeFiles/usaco.dir/build
 .PHONY : usaco/fast
 
-2018-2019/2nd/Silver/problem3.o: 2018-2019/2nd/Silver/problem3.cpp.o
+2015-2016/1st/Silver/problem3.o: 2015-2016/1st/Silver/problem3.cpp.o
 
-.PHONY : 2018-2019/2nd/Silver/problem3.o
+.PHONY : 2015-2016/1st/Silver/problem3.o
 
 # target to build an object file
-2018-2019/2nd/Silver/problem3.cpp.o:
-	$(MAKE) -f CMakeFiles/usaco.dir/build.make CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.o
-.PHONY : 2018-2019/2nd/Silver/problem3.cpp.o
+2015-2016/1st/Silver/problem3.cpp.o:
+	$(MAKE) -f CMakeFiles/usaco.dir/build.make CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.o
+.PHONY : 2015-2016/1st/Silver/problem3.cpp.o
 
-2018-2019/2nd/Silver/problem3.i: 2018-2019/2nd/Silver/problem3.cpp.i
+2015-2016/1st/Silver/problem3.i: 2015-2016/1st/Silver/problem3.cpp.i
 
-.PHONY : 2018-2019/2nd/Silver/problem3.i
+.PHONY : 2015-2016/1st/Silver/problem3.i
 
 # target to preprocess a source file
-2018-2019/2nd/Silver/problem3.cpp.i:
-	$(MAKE) -f CMakeFiles/usaco.dir/build.make CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.i
-.PHONY : 2018-2019/2nd/Silver/problem3.cpp.i
+2015-2016/1st/Silver/problem3.cpp.i:
+	$(MAKE) -f CMakeFiles/usaco.dir/build.make CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.i
+.PHONY : 2015-2016/1st/Silver/problem3.cpp.i
 
-2018-2019/2nd/Silver/problem3.s: 2018-2019/2nd/Silver/problem3.cpp.s
+2015-2016/1st/Silver/problem3.s: 2015-2016/1st/Silver/problem3.cpp.s
 
-.PHONY : 2018-2019/2nd/Silver/problem3.s
+.PHONY : 2015-2016/1st/Silver/problem3.s
 
 # target to generate assembly for a file
-2018-2019/2nd/Silver/problem3.cpp.s:
-	$(MAKE) -f CMakeFiles/usaco.dir/build.make CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.s
-.PHONY : 2018-2019/2nd/Silver/problem3.cpp.s
+2015-2016/1st/Silver/problem3.cpp.s:
+	$(MAKE) -f CMakeFiles/usaco.dir/build.make CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.s
+.PHONY : 2015-2016/1st/Silver/problem3.cpp.s
 
 # Help Target
 help:
@@ -226,9 +226,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... usaco"
-	@echo "... 2018-2019/2nd/Silver/problem3.o"
-	@echo "... 2018-2019/2nd/Silver/problem3.i"
-	@echo "... 2018-2019/2nd/Silver/problem3.s"
+	@echo "... 2015-2016/1st/Silver/problem3.o"
+	@echo "... 2015-2016/1st/Silver/problem3.i"
+	@echo "... 2015-2016/1st/Silver/problem3.s"
 .PHONY : help
 
 

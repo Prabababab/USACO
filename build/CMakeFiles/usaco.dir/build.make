@@ -74,27 +74,27 @@ include CMakeFiles/usaco.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/usaco.dir/flags.make
 
-CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.o: CMakeFiles/usaco.dir/flags.make
-CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.o: ../2018-2019/2nd/Silver/problem3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/Prababamaba/projects/USACO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.o -c /home/Prababamaba/projects/USACO/2018-2019/2nd/Silver/problem3.cpp
+CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.o: CMakeFiles/usaco.dir/flags.make
+CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.o: ../2015-2016/1st/Silver/problem3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/Prababamaba/projects/USACO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.o -c /home/Prababamaba/projects/USACO/2015-2016/1st/Silver/problem3.cpp
 
-CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/Prababamaba/projects/USACO/2018-2019/2nd/Silver/problem3.cpp > CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.i
+CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/Prababamaba/projects/USACO/2015-2016/1st/Silver/problem3.cpp > CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.i
 
-CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/Prababamaba/projects/USACO/2018-2019/2nd/Silver/problem3.cpp -o CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.s
+CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/Prababamaba/projects/USACO/2015-2016/1st/Silver/problem3.cpp -o CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.s
 
 # Object files for target usaco
 usaco_OBJECTS = \
-"CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.o"
+"CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.o"
 
 # External object files for target usaco
 usaco_EXTERNAL_OBJECTS =
 
-usaco: CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.o
+usaco: CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.o
 usaco: CMakeFiles/usaco.dir/build.make
 usaco: CMakeFiles/usaco.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/Prababamaba/projects/USACO/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable usaco"

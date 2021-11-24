@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/usaco.dir/2018-2019/2nd/Silver/problem3.cpp.o"
+  "CMakeFiles/usaco.dir/2015-2016/1st/Silver/problem3.cpp.o"
   "usaco"
   "usaco.pdb"
 )
