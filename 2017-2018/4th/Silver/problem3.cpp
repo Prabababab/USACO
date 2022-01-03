@@ -123,8 +123,8 @@ int max_val_graph(int a, int b){
 
 int main(){
 	
-// 	freopen("multimoo.in", "r", stdin);
-// 	freopen("multimoo.out", "w", stdout);
+	freopen("multimoo.in", "r", stdin);
+	freopen("multimoo.out", "w", stdout);
 	
 	cin >> n;
 	
@@ -138,29 +138,29 @@ int main(){
 	
 	//Part 1
 	
-	int max_area = 0;
+	int max_area_1 = 0;
 	
 	for(int i = 0; i < n; ++i)
 		for(int j = 0; j < n; ++j)
 			if(!vis[i][j])
-				max_area = max(bfs(i, j), max_area);
+				max_area_1 = max(bfs(i, j), max_area_1);
 	
-	cout << max_area << "\n";
+	cout << max_area_1 << "\n";
 	
 	//Part 2
 	
-	int max_area_comb = 0;
+	int max_area_2 = 0;
 	
 	for(auto itr = cow_land.begin(); itr != cow_land.end(); ++itr){
 		
 		for(auto jtr = next(itr, 1); jtr != cow_land.end(); ++jtr){
 			
-			max_area_comb = max(max_area_comb, max_val_graph(itr->first, jtr->first));
+			max_area_2 = max(max_area_2, max_val_graph(itr->first, jtr->first));
 			
 		}
 		
 	}
 	
-	cout << max_area_comb << "\n";
+	cout << max_area_2 << "\n";
 	
 }
