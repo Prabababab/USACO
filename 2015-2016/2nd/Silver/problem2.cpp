@@ -1,57 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
-//Problem Name: Diamond Collector
+// Problem Name: Subsequences Summing to Seven
 
 int main(){
 	
-	freopen("diamond.in", "r", stdin);
-	freopen("diamond.out", "w", stdout);
+	freopen("div7.in", "r", stdin);
+	freopen("div7.out", "w", stdout);
 	
-	long long n, k;
-	cin >> n >> k;
+	int n;
+	cin >> n;
 	
-	long long d[n];
-	for(long long& x : d)
-		cin >> x;
-	
-	sort(d, d + n);
-	
-	long long m[n];
-	memset(m, 0, sizeof(m));
-	
-	int l = 0, r = 0;
-	while(l < n){
-		
-		if(r >= n){
-			m[l] = r - l;
-			++l;
-			continue;
-		}
-		
-		while(r < n && d[l] + k >= d[r])
-			++r;
-		
-		m[l] = r - l;
-		
-		++l;
-		
-	}
-	
-	long long ans = 0;
+	int pref = 0, temp;
+	int first[7], last[7];
+	for(int i = 0; i < 7; ++i)
+		first[i] = INT_MAX, last[i] = 1;
 	
 	for(int i = 0; i < n; ++i){
-		
-		long long test = m[i];
-		
-		for(int j = i + m[i]; j < n; ++j){
-			
-			test = max(test, m[i] + m[j]);
-			
-		}
-		
-		ans = max(ans, test);
-		
+		cin >> temp;
+		pref = (pref + temp) % 7;
+		first[pref] = min(first[pref], i);
+		last[pref] = i;
 	}
+	
+	int ans = INT_MIN;
+	for(int i = 0; i < 7; ++i)
+		if(first[i] <= n)
+			ans = max(ans, last[i] - first[i]);
+	
 	
 	cout << ans << "\n";
 	

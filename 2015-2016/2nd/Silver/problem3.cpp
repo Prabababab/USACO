@@ -1,70 +1,73 @@
 #include <bits/stdc++.h>
 using namespace std;
-// Problem Name: Closing the Farm
-
-void dfs(vector<bool>& vis, int& cur, vector<vector<int>>& adj_list){
-	vis[cur] = true;
-	for(int& adj : adj_list[cur])
-		if(!vis[adj])
-			dfs(vis, adj, adj_list);
-	return;
-}
+// Problem Name: Build Gates
 
 int main(){
 	
-	freopen("closing.in", "r", stdin);
-	freopen("closing.out", "w", stdout);
+	freopen("gates.in", "r", stdin);
+	freopen("gates.out", "w", stdout);
 	
-	int n, m;
-	cin >> n >> m;
+	bool grid[2005][2005] = {};
 	
-	bool adj_mat[n][n];
-	memset(adj_mat, 0, sizeof(adj_mat));
-	for(int i = 0; i < m; ++i){
-		
-		int a, b;
-		cin >> a >> b;
-		
-		--a, --b;
-		adj_mat[a][b] = adj_mat[b][a] = true;
-		
-	}
+	int tempi = 1002, tempj = 1002;
 	
-	vector<int> c(n);
+	int n;
+	cin >> n;
+	string s;
+	cin >> s;
 	for(int i = 0; i < n; ++i){
-		cin >> c[n-i-1];
-		--c[n-i-1];
-	}
-	
-	vector<string> ans(n);
-	vector<vector<int>> adj_list(n);
-	vector<int> in;
-	
-	for(int i = 0; i < n; ++i){
-		
-		vector<bool> vis(n);
-		
-		int x = c[i];
-		
-		for(int& j : in){
-			if(adj_mat[x][j]){
-				adj_list[x].push_back(j);
-				adj_list[j].push_back(x);
-			}
+		int diri = 0, dirj= 0;
+		switch(s[i]){
+			case 'N':
+				diri = 1;
+				break;
+			case 'S':
+				diri = -1;
+				break;
+			case 'E':
+				dirj = 1;
+				break;
+			case 'W':
+				dirj = -1;
+				break;
 		}
-		
-		dfs(vis, x, adj_list);
-		in.push_back(x);
-		
-		int sum = accumulate(vis.begin(), vis.end(), 0);
-		
-		ans[i] = ((sum == i + 1) ? "YES\n" : "NO\n");
-		
+		for(int a = 0; a < 2; ++a){
+			tempi += diri, tempj += dirj;
+			grid[tempi][tempj] = true;
+		}
 	}
 	
-	for(int i = n - 1; i >= 0; --i)
-		cout << ans[i];
+	int di[4] = {1, -1, 0, 0};
+	int dj[4] = {0, 0, 1, -1};
 	
-	return 0;
+	int ans = -1;
+	for(int i = 0; i <= 2004; ++i){
+		for(int j = 0; j <= 2004; ++j){
+			
+			if(grid[i][j]) continue;
+			
+			++ans;
+			
+			queue<pair<int, int>> q;
+			q.push({i, j});
+			grid[i][j] = true;
+			
+			while(q.size()){
+				int i = q.front().first, j = q.front().second;
+				q.pop();
+				for(int k = 0; k < 4; ++k){
+					int ni = i + di[k];
+					int nj = j + dj[k];
+					if(ni <= 2004 && ni >= 0 && nj <= 2004 && nj >= 0 && !grid[ni][nj]){
+						grid[ni][nj] = true;
+						q.push({ni, nj});
+					}
+				}
+			}
+			
+		}
+	}
+	
+	cout << ans << "\n";
 	
 }

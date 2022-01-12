@@ -1,74 +1,60 @@
 #include <bits/stdc++.h>
 using namespace std;
-//Problem Name: Field Reduction
-int n;
+// Problem Name: Angry Cows
+
+// Binary Search because log_2 (1000000000) = ~30 which is not a bad constant factor
+// Make a check method that will take O(n) time or something and you should be fine
+
+vector<int> arr;
+
+bool check (int rad, int k){
+	
+	int prev = arr[0];
+	int res_k = 1;
+	
+	for(int i = 1; i < arr.size(); ++i){
+		
+		if(prev + 2 * rad < arr[i]){
+			++res_k;
+			prev = arr[i];
+		}
+		
+		if(res_k > k)
+			return false;
+		
+	}
+	
+	return true;
+	
+}
 
 int main(){
 	
-	freopen("reduce.in", "r", stdin);
-	freopen("reduce.out", "w", stdout);
+	freopen("angry.in", "r", stdin);
+	freopen("angry.out", "w", stdout);
 	
-	cin >> n;
+	int n, k;
+	cin >> n >> k;
 	
-	vector<array<long long, 2>> cows(n);
-	int x[n], y[n];
+	arr.resize(n);
+	for(int& x : arr)
+		cin >> x;
 	
-	for(int i = 0; i < n; ++i){
-		cin >> cows[i][0] >> cows[i][1];
-		x[i] = i;
-		y[i] = i;
+	sort(arr.begin(), arr.end());
+	
+	int l = 0, r = arr.back();
+	while(l <= r){
+		
+		int mid = (l + r) / 2;
+		
+		if(check(mid, k))
+			r = mid - 1;
+		else
+			l = mid + 1;
+		
 	}
 	
-	sort(x, x + n, [&](const int& a, const int& b){
-		return cows[a][0] < cows[b][0];
-	});
-	sort(y, y + n, [&](const int& a, const int& b){
-		return cows[a][1] < cows[b][1];
-	});
-	
-	long long ans = (cows[x[n-1]][0] - cows[x[0]][0]) * (cows[y[n-1]][1] - cows[y[0]][1]);
-	
-	int i[3];
-	for(i[0] = 0; i[0] < 4; ++i[0]){
-		for(i[1] = 0; i[1] < 4; ++i[1]){
-			for(i[2] = 0; i[2] < 4; ++i[2]){
-				
-				unordered_set<int> del;
-				
-				int state[4] = {};
-				state[1] = state[3] = n - 1;
-				
-				for(int j = 0; j < 3; ++j){
-					
-					int change = ((i[j] % 2) ? -1 : 1);
-					int* ref = ((i[j] < 2) ? x : y);
-					
-					del.insert(ref[state[i[j]]]);
-					
-					while(del.find(ref[state[i[j]]]) != del.end()){
-						state[i[j]] += change;
-					}
-					
-				}
-				
-				for(int j = 0; j < 4; ++j){
-					
-					int change = ((j % 2) ? -1 : 1);
-					int* ref = ((j < 2) ? x : y);
-					
-					while(del.find(ref[state[j]]) != del.end()){
-						state[j] += change;
-					}
-					
-				}
-				
-				ans = min(ans, (cows[x[state[1]]][0] - cows[x[state[0]]][0]) * (cows[y[state[3]]][1] - cows[y[state[2]]][1]));
-				
-			}
-		}
-	}
-	
-	cout << ans << "\n";
+	cout << l << "\n";
 	
 	return 0;
 	
